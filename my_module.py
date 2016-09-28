@@ -143,11 +143,15 @@ def sumoflist(list, returnornot):
 # Environmental Science Functions
 
 
-def solveforpopulationnumber(number_of_marked_individuals, num_of_marked_and_recaptured, total_captured_a_second_time): #calculates the amount of individuals in a population
-    m = number_of_marked_individuals
-    n_plus_one = total_captured_a_second_time + 1
-    r_plus_one = num_of_marked_and_recaptured + 1
-    m_times_n_plus_one = m * n_plus_one
-    total = float(m_times_n_plus_one / r_plus_one)
+def solveforpopulationnumber(m, r, lower_case_n): #calculates the amount of individuals in a population
 
+#M =  total number of marked individuals
+#N  =  total population size (which we do not know)
+#R  =  number of marked individuals recaptured
+#n  =   total number of individuals (marked and unmarked) captured a second time
+
+    lower_case_n_plus_one = lower_case_n + 1
+    m_times_lower_case_n_plus_one = m * lower_case_n_plus_one
+    r_plus_1 = r + 1
+    total = float(m_times_lower_case_n_plus_one / r_plus_1)
     return total
