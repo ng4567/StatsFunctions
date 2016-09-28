@@ -11,35 +11,26 @@ def rand_seq(n):
 
 #Honors Stats class functions, created 9/22
 
-def zscore(list, index, returnornot):  #finds zscore or standard score of a list
+def zscore(list, index):  #finds zscore or standard score of a list
     indexminusone = index - 1
     mean = np.mean(list)
     numberminusmean = list[indexminusone] - mean
     array = np.array(list)
     stdev = np.std(array)
-    zscore = numberminusmean / stdev
+    z_score = numberminusmean / stdev
 
-    if returnornot == True:
-        return zscore
-    else:
-        print 'zscore: ' + str(zscore)
+    return z_score
 
-def mean(list, returnornot):   #finds average of a list
+def mean(list):   #finds average of a list
     avg = np.mean(list)
-    if returnornot == True:
-        return float(avg)
-    else:
-        print "Mean: " + str(avg)
 
-def stdev(list, returnornot): #finds standard deviation of a list
-    import numpy as np
+    return avg
+
+def stdev(list): #finds standard deviation of a list
     array = np.array(list)
-    standarddeviation = np.std(array)
+    standard_deviation = np.std(array)
 
-    if returnornot == True:
-        return float(standarddeviation)
-    else:
-        print 'standard deviation: ' + str(standarddeviation)
+    return standard_deviation
 
 def median(list, returnornot): #finds the median or q2 of a list
     list_length_divded_by_two = len(list) / 2
@@ -141,3 +132,22 @@ def greatesttoleast(list, returnornot): #sorts a list from greatest to least
         print list
 
 
+def sumoflist(list, returnornot):
+    sum = sum(list)
+
+    if returnornot == True:
+        return list
+    else:
+        print list
+
+# Environmental Science Functions
+
+
+def solveforpopulationnumber(number_of_marked_individuals, num_of_marked_and_recaptured, total_captured_a_second_time): #calculates the amount of individuals in a population
+    m = number_of_marked_individuals
+    n_plus_one = total_captured_a_second_time + 1
+    r_plus_one = num_of_marked_and_recaptured + 1
+    m_times_n_plus_one = m * n_plus_one
+    total = float(m_times_n_plus_one / r_plus_one)
+
+    return total
