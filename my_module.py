@@ -133,12 +133,31 @@ def greatesttoleast(list, returnornot): #sorts a list from greatest to least
 
 
 def sumoflist(list, returnornot):
-    sum = sum(list)
+    tsum = sum(list)
 
-    if returnornot == True:
-        return list
-    else:
-        print list
+    return tsum
+
+
+def rule_of_68_95_99_point_7(list):
+    standarddev = stdev(list)
+    avg = mean(list)
+
+    one_stdev_plus = standarddev + avg
+    one_stdev_minus = avg - standarddev
+
+    two_stdev_plus = one_stdev_plus + standarddev
+    two_stdev_minus = one_stdev_minus - standarddev
+
+    three_stdev_plus = two_stdev_plus + standarddev
+    three_stdev_minus = two_stdev_minus - standarddev
+
+    print 'Mean: ' + str(avg)
+    print 'Standard Deviation:' + str(standarddev)
+
+    print 'One standard deviation: ' + str(one_stdev_minus) + ' to '  + str(one_stdev_plus)
+    print 'Two standard deiation: ' + str(two_stdev_minus) + ' to ' + str(two_stdev_plus)
+    print 'Three standard deiation: ' + str(three_stdev_minus) + ' to ' + str(three_stdev_plus)
+
 
 # Environmental Science Functions
 
@@ -155,3 +174,10 @@ def solveforpopulationnumber(m, r, lower_case_n): #calculates the amount of indi
     r_plus_1 = r + 1
     total = float(m_times_lower_case_n_plus_one / r_plus_1)
     return total
+
+
+
+
+sample_list = [18.7, 16.4, 13.2, 19.1, 12.3, 16.7, 15.8, 16.2, 18.6, 17.8, 14.3, 22.8, 16.4, 16.2, 16.6, 16.8, 15.7, 12.6, 9.4, 13.6, 18.3, 17.8, 18.2, 13.2, 14.6, 13.8, 13.2, 15.7, 15.8, 12.2, 13.6, 19.7, 14.9, 15.2, 15.3, 18.7, 17.6, 14.7, 16.1, 13.2, 12.2, 12.4, 13.5, 16.8]
+
+rule_of_68_95_99_point_7(sample_list)
