@@ -138,7 +138,7 @@ def sumoflist(list, returnornot):
     return tsum
 
 
-def rule_of_68_95_99_point_7(list):
+def rule_of_68_95_99_point_7(list): #shows values within one, two and three standard deviations of the mean
     standarddev = stdev(list)
     avg = mean(list)
 
